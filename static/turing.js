@@ -68,7 +68,7 @@ Turing.prototype.info = function () {
 	$('#canvas .state.' + this.current).attr({fill: '#7d9cec', stroke: '#0a3268'});
 	$('#canvas .text').attr({fill: '#000'});
 	$('#canvas .text.' + this.current).attr({fill: '#fff'});
-	
+
 };
 
 Turing.prototype.field = function (value) {
@@ -160,7 +160,7 @@ Turing.prototype.move = function (step) {
 		// stopped
 		$('#run').val("Run").attr('disabled', '');
 		$('#step').attr('disabled', '');
-		$('#reset').attr('disabled', '');	
+		$('#reset').attr('disabled', '');
 	}
 };
 
@@ -182,8 +182,7 @@ Turing.prototype.check = function () {
 		$('.turing input').each(function () {
 			result[result.length] = $(this).val()
 		});
-		var sum = result.lastIndexOf('1') > result.indexOf('=') ? result.lastIndexOf('1') - result.indexOf('=') : 0;
-		$('#calc').text($('#calc').text() + " " + sum);
+		$('#calc').text($('#calc').text() + " ✓");
 
 		// end of machine
 		this.stop = true;
