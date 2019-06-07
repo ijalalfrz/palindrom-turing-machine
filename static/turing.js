@@ -56,7 +56,7 @@ Turing.prototype.reset = function () {
 
 	$('#run').val("Run").attr('disabled', '');
 	$('#step').attr('disabled', '');
-	$('#calc').text(this.calc);
+	$('#calc').val(this.calc);
 
 	this.info();
 };
@@ -99,6 +99,10 @@ Turing.prototype.machine = function () {
 		}, 1, this);
 
 	} else {
+		this.stop = true;
+		$('#run').val("Run").attr('disabled', 'disabled');
+		$('#step').attr('disabled', 'disabled');
+		$('#reset').attr('disabled', '');
 		console.log('Undefined state ' + this.current + ' with value ' + value);
 	}
 };
@@ -182,7 +186,7 @@ Turing.prototype.check = function () {
 		$('.turing input').each(function () {
 			result[result.length] = $(this).val()
 		});
-		$('#calc').text($('#calc').text() + " ✓");
+		$('#calc').val($('#calc').val() + " = (ada)");
 
 		// end of machine
 		this.stop = true;

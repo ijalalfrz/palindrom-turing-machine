@@ -872,19 +872,30 @@
 			turing.reset();
 
 			$('#run').click(function () {
+				$('#calc').attr('disabled','disabled');
+				$('#set').attr('disabled','disabled');
+				
 				turing.run();
 			});
 
 			$('#step').click(function () {
+				$('#calc').attr('disabled','disabled');
+				$('#set').attr('disabled','disabled');
 				turing.step();
 			});
 
 			$('#reset').click(function () {
 				turing.reset();
+				$('#calc').attr('disabled','');
+				$('#set').attr('disabled','');
 			});
 
-			$('#calc').click(function () {
-				var calc = prompt('Please type in new word (lowercase + end with dot):');
+			$('#calc').click(function(){
+				$(this).val('');
+			});
+
+			$('#set').click(function () {
+				var calc = $('#calc').val();
 				if (calc) {
 					var match = calc.match(/([a-zA-Z]+\.)/i);
 					if (match) {
@@ -895,7 +906,7 @@
 						turing.calc = first;
 						turing.reset();
 					} else {
-						alert('Sorry, invalid input!');
+						alert('input must be lowercase and ended by (.) !');
 					}
 				}
 			});
@@ -907,8 +918,17 @@
 	<ol class="turing"></ol>
 
 	<div class="container">
+		<p style="font-size: 18pt">
+			<b>Panduan</b><br>
+			- Input text karakter yang diperbolehkan: (a,i,u,e,o)<br>
+			- Akhir kata diakhiri (y)
+		</p>
+		<br>
+		<br>
+		<hr>
+		
 		<div class="actions">
-			<h2>Actions</h2>
+			<h2>Aksi</h2>
 			<p>
 				<input id="run" type="button" value="Run" />
 				<input id="step" type="button" value="Next step" />
@@ -916,7 +936,7 @@
 			</p>
 		</div>
 		<div class="count">
-			<h2>Count</h2>
+			<h2>Langkah</h2>
 			<p id="count"></p>
 		</div>
 		<div class="state">
@@ -924,8 +944,10 @@
 			<p id="state"></p>
 		</div>
 		<div class="calc">
-			<h2>Check</h2>
-			<p id="calc"></p>
+			<h2>Cek Kata</h2>
+			<input id="calc" type="text">
+			<input id="set" type="button" value="Set">
+			<!-- <p id="calc"></p> -->
 		</div>
 
 		<div id="canvas"></div>

@@ -29,16 +29,30 @@ li {
 	padding-right: 5px;
 }
 
+
+input[type=button], .calc input[type=text] {
+	padding: 10px 20px;
+	border-radius: 10px;
+	font-weight: bold;
+}
+
 li input[type=text] {
 	font-family: Consolas, Monaco, monospace;
-	font-size: 1.5em;
-	width: 40px;
-	height: 40px;
-	border: 1px solid #ccc;
-	text-align: center;
-	background-color: #fff;
-	color: #000;
+    font-size: 1.5em;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #446ee6;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    border-radius: 100px;
 }
+
+
+input[type=button]:active, input[type=button]:focus {
+	outline: 0;
+}
+
 
 li.active input[type=text] {
 	background-color: #fff8de;
@@ -54,12 +68,11 @@ li.active:before {
 }
 
 .container {
-	position: fixed;
-	width: 640px;
+	width: 1000px;
 	margin: 40px auto;
 	padding: 25px 20px;
 	left: 50%;
-	margin-left: -343px;
+	-margin-left: -343px;
 	background-color: #fff;
 	border: 1px solid #ccc;
 }
