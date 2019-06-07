@@ -186,7 +186,7 @@ Turing.prototype.check = function () {
 		$('.turing input').each(function () {
 			result[result.length] = $(this).val()
 		});
-		$('#calc').val($('#calc').val() + " = (ada)");
+		$('#calc').val($('#calc').val() + " = palindrom");
 
 		// end of machine
 		this.stop = true;
