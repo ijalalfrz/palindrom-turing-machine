@@ -1,8 +1,6 @@
-# Heterogram Turing Machine
+# Palindrome Checker with Turing Machine
 
-> Heterogram Checker using Turing Machine in JavaScript
-
-http://afrastgeek.gitlab.io/heterogram-turing-machine
+> Palindrome Checker with Turing Machine in JavaScript
 
 Based on Fabian Vogler and Cyril Gabathuler work at
 [Turing](https://github.com/fabian/Turing) Project.
